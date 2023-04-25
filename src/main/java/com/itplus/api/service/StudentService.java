@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class StudentService {
+public class StudentService implements Services<Student>{
     private StudentResponsitory studentResponsitory;
 
     public StudentService() {
@@ -42,7 +42,7 @@ public class StudentService {
        return this.studentResponsitory.findByMasvAllIgnoreCase(masv);
     }
 
-    public List<Student> findAll(){
+        public List<Student> findAll(){
         return studentResponsitory.findAll();
     }
 }
